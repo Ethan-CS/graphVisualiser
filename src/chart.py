@@ -15,7 +15,7 @@ def create_graph(data, strategy_name):
     print(data)  # Print the data to verify
 
     # Scatter plot using seaborn to colour data points by strategy
-    sns.scatterplot(x=data['P VALUE'], y=data['NUMBER OF WINS'], hue=data['DEFENCE STRATEGY'], palette="muted")
+    sns.scatterplot(x=data['P VALUE'], y=data['NUMBER OF WINS'], hue=data['DEFENCE STRATEGY'], palette="bright")
 
     # Setting the chart title and axis labels
     font = {'fontname': 'Helvetica Neue'}
