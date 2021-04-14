@@ -7,6 +7,7 @@ import numpy as np
 
 
 def show_graph(filepath):
+    plt.figure(figsize=(10, 8))
     # Convert CSV into numpy matrix
     data = np.genfromtxt(filepath, delimiter=',', dtype=int)
     graph = nx.from_numpy_matrix(data)
@@ -17,7 +18,7 @@ def show_graph(filepath):
 
     # Save to a .jpg file in the output file
     filename = os.path.splitext(filepath)[0]
-    plt.savefig(f"{filename}.jpg", format="JPEG")
+    plt.savefig(f"{filename}.jpg", format="JPEG", dpi=300)
     plt.show()
 
 
