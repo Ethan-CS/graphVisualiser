@@ -10,16 +10,16 @@ data_filepath = "/Users/ethankelly/Documents/Agency/data"
 out = "charts"
 protection_allocation = ["Deterministic", "Mixed", "Random"]
 defence_strategies = ["Proximity", "Degree", "Protection"]
-graph_types = ["Erdős–Rényi"]
-ranges = ["0.05-1.00", "0.01-0.20"]
+graph_types = ["Preferential Attachment"]
+ranges = ["1 - 4"]
 font = {'family': 'serif',
         'color': 'black',
         'weight': 'normal',
         'size': 20,
         }
 num_v = 50
-data_filter = 'P VALUE'
-x_lab = 'Number of Edges'
+data_filter = 'MIN DEGREE'
+x_lab = data_filter.title()
 
 
 def get_win_charts(graphs, data_path):
@@ -61,7 +61,7 @@ def create_plot(type_of_plot, data, allocation, value_range, filter_by):
             leg.get_texts()[i].set_text(defence_strategies[i])
         where_to_save += f"winners/{value_range}/{allocation}.jpg"
     elif type_of_plot == 'percent infected':
-        sns.scatterplot(x=data[filter_by], y=(data['INFECTED'] / num_v), hue=data['STRATEGY'], palette="bright", alpha=0.8, s=60)
+        sns.boxplot(x=data[filter_by], y=(data['INFECTED'] / num_v), hue=data['STRATEGY'], palette="bright")
         plt.title(f'Percentage infections by defence\n({allocation} protection allocation)', **font)
         plt.xlabel(data_filter.title(), **font)
         plt.ylabel('Percent of graph infected', **font)
