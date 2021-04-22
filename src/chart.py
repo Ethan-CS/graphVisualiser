@@ -11,7 +11,7 @@ out = "charts"
 protection_allocation = ["Deterministic", "Mixed", "Random"]
 defence_strategies = ["Proximity", "Degree", "Protection"]
 graph_types = ["Preferential Attachment"]
-ranges = ["1 - 4"]
+ranges = ["1 - 6"]
 font = {'family': 'serif',
         'color': 'black',
         'weight': 'normal',
